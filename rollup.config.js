@@ -6,12 +6,12 @@ import serve from 'rollup-plugin-serve';
 import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify';
 
-const env = process.env.NODE_ENV; // eslint-disable-line no-undef
-const isProduction  = env === 'production'; 
-const isDevelopment = env !== 'production';
+const env = process.env; // eslint-disable-line no-undef
+const isProduction  = env.NODE_ENV === 'production'; 
+const isDevelopment = env.NODE_ENV === 'development';
 const entryFile = './app/index.js';
 const buildDir = './build/';
-const serverPort = 8080;
+const serverPort = env.PORT || 8080;
 
 export default {
     entry: entryFile,
