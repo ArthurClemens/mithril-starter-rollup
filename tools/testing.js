@@ -6,7 +6,27 @@ import htmltidy from 'htmltidy';
 Usage:
 
 import m from 'mithril';
-import {matchSnapshot} from '../../../scripts/testing';
+import {render} from '../../../tools/testing';
+
+describe('My component', () => {
+    it('no params', (done) => {
+        const cmp = m(myComponent);
+        const html = render(cmp);
+        // ...
+    });
+});
+*/
+export const render = (component) => {
+    const root = document.createElement('div');
+    m.render(root, component);
+    return root;
+};
+
+/*
+Usage:
+
+import m from 'mithril';
+import {matchSnapshot} from '../../../tools/testing';
 
 describe('My component', () => {
     it('no params', (done) => {
@@ -16,13 +36,12 @@ describe('My component', () => {
 });
 */
 export const matchSnapshot = (component, done) => {
-    const root = document.createElement('div');
-    m.render(root, component);
-    htmltidy.tidy(root.innerHTML, {
+    const html = render(component).innerHTML;
+    htmltidy.tidy(html, {
         // Options: http://tidy.sourceforge.net/docs/quickref.html
         'show-body-only': true,
         'indent': true
-    }, (err, html) => (!err && expect(html).toMatchSnapshot(),
+    }, (err, tidyHtml) => (!err && expect(tidyHtml).toMatchSnapshot(),
         done()
     ));
 };
@@ -30,7 +49,7 @@ export const matchSnapshot = (component, done) => {
 /*
 Usage:
 
-import {runTests} from '../../../scripts/testing';
+import {runTests} from '../../../tools/testing';
 
 const tests = {
     'no params': m(myComponent),

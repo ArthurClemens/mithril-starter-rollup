@@ -11,12 +11,14 @@ Project setup with:
 A couple of styles are included using [Tachyon](http://tachyons.io/), but these can simply be replaced with your own CSS solution.
 
 
+
 ## Setup
 
 Install dependencies
 ```
 npm install
 ```
+
 
 
 ## Build and watch
@@ -29,6 +31,7 @@ Script commands defined in `package.json`:
 Call `npm run watch` and open a web page at [localhost:8080](http://localhost:8080/). The port number is configurable in `package.json`.
 
 When making changes, the terminal will show lint errors, if any.
+
 
 
 ## Testing
@@ -47,6 +50,7 @@ To run tests alongside the `watch` command, use a separate terminal window.
 * `rollup.config.js`: Rollup configuration
 * `.babelrc`: Babel configuration
 * `.eslintrc.json`: ESLint configuration
+
 
 
 ## Known issues
@@ -78,4 +82,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
