@@ -17,7 +17,7 @@ export default {
     entry: entryFile,
     dest: `${buildDir}/js/bundle.js`,
     format: 'iife',
-    sourceMap: 'inline',
+    sourceMap: true,
     plugins: [
 
         // Resolve libs in node_modules
