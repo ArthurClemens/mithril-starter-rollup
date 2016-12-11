@@ -6,7 +6,8 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 6,
     },
     "rules": {
         "indent": [
@@ -26,9 +27,5 @@
             "always"
         ],
         "no-console": 1
-    },
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
     }
 }
