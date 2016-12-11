@@ -26,5 +26,9 @@
             "always"
         ],
         "no-console": 1
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
     }
 }
