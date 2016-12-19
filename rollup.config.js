@@ -16,7 +16,7 @@ const serverPort = env.PORT || 8080;
 export default {
   entry: entryFile,
   dest: `${buildDir}/js/bundle.js`,
-  format: "iife",
+  format: "umd",
   sourceMap: true,
   plugins: [
 
