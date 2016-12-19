@@ -9,7 +9,7 @@ import uglify from "rollup-plugin-uglify";
 const env = process.env; // eslint-disable-line no-undef
 const isProduction = env.NODE_ENV === "production";
 const isDevelopment = env.NODE_ENV === "development";
-const entryFile = "./app/index.js";
+const entryFile = "./src/index.js";
 const buildDir = "./build/";
 const serverPort = env.PORT || 8080;
 
