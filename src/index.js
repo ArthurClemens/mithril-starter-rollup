@@ -28,3 +28,4 @@ const routes = {
 };
 links.forEach(link => routes[link.path] = link.module);
 m.route(mountNode, "/", routes);
+
