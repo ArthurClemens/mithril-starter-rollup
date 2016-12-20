@@ -1,11 +1,11 @@
-# Mithril Starter Project
+# mithril-starter-rollup
 
 Project setup with:
 * [Mithril 1.x](https://github.com/lhorie/mithril.js/tree/rewrite/docs)
 * [Rollup](http://rollupjs.org) for optimized module bundles
 * [Babel](http://babeljs.io) for transpiling es2015 to es5
 * [LiveReload](https://github.com/livereload/livereload-js) to view code changes directly in the browser
-* [Jest](https://facebook.github.io/jest/) to run tests and create component snapshots
+* [Jest](https://facebook.github.io/jest/) to run BDD tests and create component snapshots
 * [ESLint](http://eslint.org) to find syntax errors and get a standardized coding style
 
 A couple of styles are included using [Tachyon](http://tachyons.io/), but these can simply be replaced with your own CSS solution.
@@ -36,7 +36,7 @@ When making changes, the terminal will show lint errors, if any.
 
 ## Testing
 
-[Jest](https://facebook.github.io/jest/) finds 'spec' files inside directories named `__test__` (see `app/page/__tests__/index.spec.js` for an example). During a test run, snapshots are created using helper function `matchSnapshot(component)`.
+See [mithril-jest](https://github.com/ArthurClemens/mithril-jest) for a short overview of Jest.
 
 * `npm run test`: starts a test run (only useful to know if tests are passing)
 * `npm run test:watch`: starts an interactive session with the option to evaluate and update existing snapshots
@@ -47,9 +47,9 @@ To run tests alongside the `watch` command, use a separate terminal window.
 
 ## Configuration files
 
-* `rollup.config.js`: Rollup configuration
+* `scripts`: Contains Rollup configuration files
 * `.babelrc`: Babel configuration
-* `.eslintrc.json`: ESLint configuration
+* `.eslintrc`: ESLint configuration
 
 
 
