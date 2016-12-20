@@ -1,16 +1,18 @@
 /* global describe, it, expect */
-import m from 'mithril';
-import {render, matchSnapshot} from '../../../tools/testing';
-import page from '../';
+import m from "mithril";
+import { tidy } from "mithril-jest";
+import page from "../";
 
-describe('Page component', () => {
-    it('should have a title', (done) => {
-        const cmp = m(page);
-        matchSnapshot(cmp, done);
-    });
-    it('title should be Page', () => {
-        const cmp = m(page);
-        const html = render(cmp);
-        expect(html.innerHTML).toContain('Page');
-    });
+describe("Page component", () => {
+  it("should have a title", () => {
+    const cmp = m(page);
+    const html = tidy(cmp);
+    expect(html).toMatchSnapshot();
+  });
+  it("title should be Page", () => {
+    const cmp = m(page);
+    const html = tidy(cmp);
+    expect(html).toContain("Page");
+  });
 });
+
