@@ -1,6 +1,6 @@
 {
   "name": "mithril-starter-rollup",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Mithril Starter Project with Rollup, Babel, LiveReload and ESLint",
   "license": "MIT",
   "repository": {
@@ -13,8 +13,8 @@
   "scripts": {
     "build": "rm -rf build/js && mkdir build/js && DEPS=true rollup -c ./scripts/rollup.umd.js && rollup -c ./scripts/rollup.es.js",
     "watch": "DEPS=true PORT=8080 WATCH_DIR=./build/ rollup -c ./scripts/rollup.watch.js --watch",
-    "test": "jest src/***",
-    "test:watch": "jest src/... --watch"
+    "test": "jest src/**",
+    "test:watch": "jest src/** --watch"
   },
   "devDependencies": {
     "babel-jest": "^18.0.0",
