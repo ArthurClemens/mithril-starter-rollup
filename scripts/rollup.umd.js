@@ -1,5 +1,5 @@
 /*
-Build an UMD bundle
+Builds a UMD bundle
 */
 import { pkg, createConfig } from "./rollup.base.js";
 import uglify from "rollup-plugin-uglify";

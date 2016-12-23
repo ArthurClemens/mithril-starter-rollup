@@ -5,6 +5,10 @@ import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 
 export const pkg = JSON.parse(fs.readFileSync("./package.json"));
+if (!pkg) {
+  throw("Could not read package.json");
+}
+
 const external = Object.keys(pkg.dependencies || {});
 
 const globals = {};
