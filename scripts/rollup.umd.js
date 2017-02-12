@@ -1,20 +1,21 @@
 /*
-Builds a UMD bundle
+Build to an Universal Module Definition
 */
 import { pkg, createConfig } from "./rollup.base.js";
 import uglify from "rollup-plugin-uglify";
 
 const env = process.env; // eslint-disable-line no-undef
-const includeDepencies = !!env.DEPS || false; // Use `false` if you are creating a library, or if you are including external script in html
+const includeDepencies = !!parseInt(env.DEPS, 10) || false; // Use `false` if you are creating a library, or if you are including external script in html
+const dest = env.DEST || pkg.main;
 
 const baseConfig = createConfig({ includeDepencies });
-const umdConfig = Object.assign({}, baseConfig, {
-  dest: pkg.main,
+const targetConfig = Object.assign({}, baseConfig, {
+  dest,
   format: "umd",
   sourceMap: true
 });
 
-umdConfig.plugins.push(uglify());
+targetConfig.plugins.push(uglify());
 
-export default umdConfig;
+export default targetConfig;
 

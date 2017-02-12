@@ -17,18 +17,20 @@ if (!serverPort) {
   throw("Missing PORT: no http server port");
 }
 
-umdConfig.plugins.push(
+const targetConfig = Object.assign({}, umdConfig);
+
+targetConfig.plugins.push(
   serve({
     contentBase: watchDir,
     port: serverPort
   })
 );
 
-umdConfig.plugins.push(
+targetConfig.plugins.push(
   livereload({
     watch: watchDir
   })
 );
 
-export default umdConfig;
+export default targetConfig;
 

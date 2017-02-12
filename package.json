@@ -1,6 +1,6 @@
 {
   "name": "mithril-starter-rollup",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Mithril Starter Project with Rollup, Babel, LiveReload and ESLint",
   "license": "MIT",
   "repository": {
@@ -9,35 +9,35 @@
   },
   "main": "build/js/bundle.js",
   "module": "build/js/bundle.mjs",
-  "jsnext:main": "build/js/bundle.mjs",
   "scripts": {
-    "build": "rm -rf build/js && mkdir build/js && DEPS=true rollup -c ./scripts/rollup.umd.js && rollup -c ./scripts/rollup.es.js",
-    "watch": "DEPS=true PORT=8080 WATCH_DIR=./build/ rollup -c ./scripts/rollup.watch.js --watch",
+    "build": "rm -rf build/js && mkdir build/js && DEPS=1 rollup -c ./scripts/rollup.umd.js && DEPS=1 rollup -c ./scripts/rollup.es.js",
+    "watch": "DEPS=1 PORT=8080 WATCH_DIR=./build/ rollup -c ./scripts/rollup.watch.js --watch",
     "test": "jest src/**",
     "test:watch": "jest src/** --watch"
   },
   "devDependencies": {
     "babel-jest": "^18.0.0",
-    "babel-plugin-external-helpers": "^6.18.0",
-    "babel-plugin-transform-object-assign": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.18.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
     "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-runtime": "^6.20.0",
-    "es-module-loader": "^1.3.5",
-    "mithril-jest": "^0.1.0",
-    "rollup": "^0.37.2",
+    "babel-runtime": "^6.22.0",
+    "es-module-loader": "^2.1.0",
+    "mithril-jest": "^0.1.7",
+    "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^6.0.0",
+    "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-eslint": "^3.0.0",
     "rollup-plugin-livereload": "^0.4.0",
     "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-pathmodify": "^1.0.1",
     "rollup-plugin-serve": "^0.1.0",
     "rollup-plugin-uglify": "^1.0.1",
-    "rollup-watch": "^2.5.0"
+    "rollup-watch": "^3.2.2"
   },
   "dependencies": {
-    "mithril": "1.0.0-rc.6 || 1.0.x"
+    "mithril": "1.0.x"
   }
 }
