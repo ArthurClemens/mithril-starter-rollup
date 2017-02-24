@@ -1,5 +1,5 @@
 /*
-Theme style definitions using Tachyon.
+Theme style definitions using Tachyons.
 Complete list of tags: http://tachyons.io/docs/table-of-styles/
 */
 
