@@ -1,18 +1,21 @@
 /* global describe, it, expect */
 import m from "mithril";
 import { tidy } from "mithril-jest";
-import page from "../";
+import Page from "../";
 
 describe("Page component", () => {
-  it("should have a title", () => {
-    const cmp = m(page);
-    const html = tidy(cmp);
-    expect(html).toMatchSnapshot();
-  });
-  it("title should be Page", () => {
-    const cmp = m(page);
+  it("default title should be 'Page'", () => {
+    const cmp = m(Page);
     const html = tidy(cmp);
     expect(html).toContain("Page");
+    expect(html).toMatchSnapshot();
+  });
+  it("should render a custom title", () => {
+    const title = "Custom page title";
+    const cmp = m(Page, { title });
+    const html = tidy(cmp);
+    expect(html).toContain(title);
+    expect(html).toMatchSnapshot();
   });
 });
 

@@ -1,18 +1,18 @@
 import m from "mithril";
 import CSS from "./styles";
-import page from "./page";
+import Page from "./page";
 
 const links = [{
   path: "/page",
-  module: page,
+  module: Page,
   name: "Link to Page"
 }];
 
-const index = {
+const Index = {
   view: () =>
     m(CSS.page, [
       m(CSS.pageTitle, "Home"),
-      m("ul", links.map(link => (
+      m(CSS.list, links.map(link => (
         m(CSS.listItem, m(CSS.link, {
           href: link.path,
           oncreate: m.route.link
@@ -24,8 +24,7 @@ const index = {
 m.route.prefix("#");
 const mountNode = document.querySelector("#app");
 const routes = {
-  "/": index
+  "/": Index
 };
 links.forEach(link => routes[link.path] = link.module);
 m.route(mountNode, "/", routes);
-

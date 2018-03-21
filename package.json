@@ -1,43 +1,51 @@
 {
   "name": "mithril-starter-rollup",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "Mithril Starter Project with Rollup, Babel, LiveReload and ESLint",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ArthurClemens/mithril-starter-rollup.git"
   },
-  "main": "build/js/bundle.js",
-  "module": "build/js/bundle.mjs",
+  "main": "dist/js/bundle",
+  "module": "dist/js/bundle.mjs",
   "scripts": {
-    "build": "rm -rf build/js && mkdir build/js && DEPS=1 rollup -c ./scripts/rollup.umd.js && DEPS=1 rollup -c ./scripts/rollup.es.js",
-    "watch": "DEPS=1 PORT=8080 WATCH_DIR=./build/ rollup -c ./scripts/rollup.watch.js --watch",
+    "build": "yarn run clean && yarn run rollup",
+    "rollup": "DEPS=1 rollup -c ./scripts/rollup.umd.js && DEPS=1 rollup -c ./scripts/rollup.es.js",
+    "clean": "rm -rf dist/js && mkdir dist/js",
+    "dev": "DEPS=1 PORT=8080 WATCH_DIR=./dist/ rollup -c ./scripts/rollup.watch.js --watch",
     "test": "jest src/**",
     "test:watch": "jest src/** --watch"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "devDependencies": {
-    "babel-jest": "^18.0.0",
+    "babel-jest": "^22.4.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-runtime": "^6.22.0",
-    "es-module-loader": "^2.1.0",
-    "mithril-jest": "^0.1.7",
-    "rollup": "^0.41.4",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-eslint": "^3.0.0",
-    "rollup-plugin-livereload": "^0.4.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "es-module-loader": "^2.2.8",
+    "mithril-jest": "^1.0.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-pathmodify": "^1.0.1",
-    "rollup-plugin-serve": "^0.1.0",
-    "rollup-plugin-uglify": "^1.0.1",
-    "rollup-watch": "^3.2.2"
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-watch": "^4.3.1"
   },
   "dependencies": {
-    "mithril": "1.0.x"
+    "mithril": "^1.1.6"
   }
 }

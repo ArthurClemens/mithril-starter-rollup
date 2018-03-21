@@ -1,10 +1,9 @@
 {
   "presets": [
-    ["es2015", {
-      "modules": false
-    }]
+    ["env", { "modules": false }]
   ],
   "plugins": [
+    "transform-object-rest-spread",
     "external-helpers",
     "transform-object-rest-spread",
     "transform-object-assign"
@@ -12,9 +11,15 @@
   "env": {
     "test": {
       "presets": [
-        "es2015"
+        "env"
       ],
       "plugins": ["transform-runtime"]
+    },
+    "production": {
+      "presets": [
+        ["env", { "modules": false }],
+        ["minify"]
+      ],
     }
   }
 }

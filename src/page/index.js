@@ -1,10 +1,10 @@
 import m from "mithril";
 import CSS from "../styles";
 
-const page = {
-  view: () =>
+const Page = {
+  view: ({ attrs }) =>
     m(CSS.page, [
-      m(CSS.pageTitle, "Page"),
+      m(CSS.pageTitle, attrs.title || "Page"),
       m(CSS.link, {
         href: "/",
         oncreate: m.route.link
@@ -12,5 +12,4 @@ const page = {
     ])
 };
 
-export default page;
-
+export default Page;

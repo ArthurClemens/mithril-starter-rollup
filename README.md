@@ -1,7 +1,7 @@
 # mithril-starter-rollup
 
 Project setup with:
-* [Mithril 1.x](https://github.com/lhorie/mithril.js/tree/rewrite/docs)
+* [Mithril](http://mithril.js.org)
 * [Rollup](http://rollupjs.org) for optimized module bundles
 * [Babel](http://babeljs.io) for transpiling es2015 to es5
 * [LiveReload](https://github.com/livereload/livereload-js) to view code changes directly in the browser
@@ -25,10 +25,10 @@ npm install
 
 Script commands defined in `package.json`:
 
-* `build`: creates a minified bundle in `build/js/`
-* `watch`: starts a local webserver; creates a bundle in `build/js/` that is being updated with each code change; calls LiveReload to refresh the browser after code changes are built
+* `build`: creates a minified bundle in `dist/js/`
+* `dev`: starts a local webserver; creates a bundle in `dist/js/` that is being updated with each code change; calls LiveReload to refresh the browser after code changes are built
 
-Call `npm run watch` and open a web page at [localhost:8080](http://localhost:8080/). The port number is set by environment variable `PORT` in `package.json`.
+Call `npm run dev` and open a web page at [localhost:8080](http://localhost:8080/). The port number is set by environment variable `PORT` in `package.json`.
 
 When making changes, the terminal will show lint errors, if any.
 
@@ -57,15 +57,15 @@ FYI, the base configuration:
 
 ### Bundler configuration
 
-* `rollup.es.js`: Builds an ES2015 module with syntax features that node supports; see: [jsnext:main](https://github.com/rollup/rollup/wiki/jsnext:main)
+* `rollup.es.js`: Builds an ES2015 module with syntax features that node supports
 * `rollup.umd.js`: Builds a UMD bundle
 * `rollup.watch.js`: Builds a UMD bundle that is updated with each file change
 
-Environment variables:
+Optional environment variables:
 
 * `DEPS` (Number 0 or 1): include dependencies
-* `WATCH_DIR` (String): sets the watch directory when running the `watch` script
-* `PORT` (Number): sets the http server port when running the `watch` script
+* `WATCH_DIR` (String): sets the watch directory when running the `dev` script
+* `PORT` (Number): sets the http server port when running the `dev` script
 
 
 Other configuration files:
@@ -76,7 +76,7 @@ Other configuration files:
 
 ## Known issues
 
-### Upstream issue with wrong import when using watch
+### Upstream issue with wrong import when using `dev`
 
 [rollup-plugin-node-resolve/issues/66](https://github.com/rollup/rollup-plugin-node-resolve/issues/66)
 
@@ -90,7 +90,7 @@ import page from './page';
 ```
 `rollup-plugin-node-resolve` bails and stalls the watch.
 
-Solution: use `npm run build` until you no longer see import errors. Then continue using `npm run watch`.
+Solution: use `npm run build` until you no longer see import errors. Then continue using `npm run dev`.
 
 
 

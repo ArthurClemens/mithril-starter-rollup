@@ -10,11 +10,12 @@ if (!pkg) {
   throw("Could not read package.json");
 }
 const env = process.env; // eslint-disable-line no-undef
-const entry = env.ENTRY || "index.js";
-const moduleName = env.MODULE || pkg.name;
+const input = env.INPUT || "index.js";
+const name = env.NAME || pkg.name;
 const external = Object.keys(pkg.dependencies || {});
 
 const globals = {};
+
 external.forEach(ext => {
   switch (ext) {
   case "mithril":
@@ -26,17 +27,18 @@ external.forEach(ext => {
 });
 
 export const createConfig = ({ includeDepencies }) => ({
-  entry,
+  input,
   external: includeDepencies ? [] : external,
-  moduleName,
-  globals,
+  output: {
+    name,
+    globals,
+  },
   plugins: [
-
     // Resolve libs in node_modules
     resolve({
       jsnext: true,
       main: true,
-      skip: includeDepencies ? [] : external
+      external: includeDepencies ? [] : external
     }),
 
     pathmodify({
