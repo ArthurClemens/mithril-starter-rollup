@@ -73,27 +73,6 @@ Other configuration files:
 * `.eslintrc`: ESLint configuration
 
 
-
-## Known issues
-
-### Upstream issue with wrong import when using `dev`
-
-[rollup-plugin-node-resolve/issues/66](https://github.com/rollup/rollup-plugin-node-resolve/issues/66)
-
-When a wrong import is written, for instance:
-```
-import page from '../page';
-```
-instead of:
-```
-import page from './page';
-```
-`rollup-plugin-node-resolve` bails and stalls the watch.
-
-Solution: use `npm run build` until you no longer see import errors. Then continue using `npm run dev`.
-
-
-
 ## License
 
 MIT

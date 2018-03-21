@@ -1,6 +1,6 @@
 {
   "name": "mithril-starter-rollup",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Mithril Starter Project with Rollup, Babel, LiveReload and ESLint",
   "license": "MIT",
   "repository": {
