@@ -3,10 +3,9 @@
     ["env", { "modules": false }]
   ],
   "plugins": [
-    "transform-object-rest-spread",
     "external-helpers",
-    "transform-object-rest-spread",
-    "transform-object-assign"
+    "transform-object-assign",
+    "transform-object-rest-spread"
   ],
   "env": {
     "test": {
