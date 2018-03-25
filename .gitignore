@@ -6,3 +6,5 @@ __snapshots__
 *.log
 
 *.lock
+
+package-lock.json

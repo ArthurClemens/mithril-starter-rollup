@@ -1,6 +1,6 @@
 {
   "name": "mithril-starter-rollup",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mithril Starter Project with Rollup, Babel, LiveReload and ESLint",
   "license": "MIT",
   "repository": {
@@ -11,9 +11,9 @@
   "module": "dist/js/bundle.mjs",
   "scripts": {
     "build": "yarn run clean && yarn run rollup",
-    "rollup": "DEPS=1 rollup -c ./scripts/rollup.umd.js && DEPS=1 rollup -c ./scripts/rollup.es.js",
-    "clean": "rm -rf dist/js && mkdir dist/js",
-    "dev": "DEPS=1 PORT=8080 WATCH_DIR=./dist/ rollup -c ./scripts/rollup.watch.js --watch",
+    "rollup": "rollup -c ./scripts/rollup.umd.js --environment DEPS:1 && rollup -c ./scripts/rollup.es.js --environment DEPS:1",
+    "clean": "rimraf dist/js/*",
+    "dev": "rollup -c ./scripts/rollup.watch.js --environment DEPS:1,PORT:8080,WATCH_DIR:./dist/ --watch",
     "test": "jest src/**",
     "test:watch": "jest src/** --watch"
   },
@@ -22,10 +22,10 @@
     "README.md"
   ],
   "devDependencies": {
-    "babel-jest": "^22.4.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -34,6 +34,7 @@
     "babel-register": "^6.26.0",
     "es-module-loader": "^2.2.8",
     "mithril-jest": "^1.0.0",
+    "rimraf": "^2.6.2",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
