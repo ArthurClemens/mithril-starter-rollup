@@ -252,7 +252,7 @@ var mithril = createCommonjsModule(function (module) {
 		} else if (typeof commonjsGlobal !== "undefined") {
 			if (typeof commonjsGlobal.Promise === "undefined") commonjsGlobal.Promise = PromisePolyfill;
 			var PromisePolyfill = commonjsGlobal.Promise;
-		} else {}
+		}
 		var buildQueryString = function buildQueryString(object) {
 			if (Object.prototype.toString.call(object) !== "[object Object]") return "";
 			var args = [];
