@@ -38,7 +38,6 @@ export const createConfig = ({ includeDepencies }) => ({
     resolve({
       jsnext: true,
       main: true,
-      external: includeDepencies ? [] : external
     }),
 
     pathmodify({
@@ -59,7 +58,9 @@ export const createConfig = ({ includeDepencies }) => ({
       cache: true
     }),
 
-    babel()
+    babel({
+      exclude: "node_modules/**"
+    })
   ]
 });
 

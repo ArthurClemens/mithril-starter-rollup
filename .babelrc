@@ -1,22 +1,16 @@
 {
   "presets": [
-    ["env", { "modules": false }]
-  ],
-  "plugins": [
-    "external-helpers",
-    "transform-object-assign",
-    "transform-object-rest-spread"
+    ["@babel/preset-env"]
   ],
   "env": {
     "test": {
       "presets": [
-        "env"
-      ],
-      "plugins": ["transform-runtime"]
+        "@babel/preset-env"
+      ]
     },
     "production": {
       "presets": [
-        ["env", { "modules": false }],
+        ["@babel/preset-env"],
         ["minify"]
       ],
     }

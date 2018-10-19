@@ -2,11 +2,13 @@ import m from "mithril";
 import CSS from "./styles";
 import Page from "./page";
 
-const links = [{
-  path: "/page",
-  module: Page,
-  name: "Link to Page"
-}];
+const links = [
+  {
+    path: "/page",
+    module: Page,
+    name: "Link to Page"
+  }
+];
 
 const Index = {
   view: () =>
