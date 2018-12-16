@@ -26,6 +26,7 @@ npm install
 Script commands defined in `package.json`:
 
 * `build`: creates a minified bundle in `dist/js/`
+* `serve`: serves the build directory at [localhost:5000](http://localhost:5000/)
 * `dev`: starts a local webserver; creates a bundle in `dist/js/` that is being updated with each code change; calls LiveReload to refresh the browser after code changes are built
 
 Call `npm run dev` and open a web page at [localhost:8080](http://localhost:8080/). The port number is set by environment variable `PORT` in `package.json`.
