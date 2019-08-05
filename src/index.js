@@ -15,15 +15,15 @@ const Index = {
     m(CSS.page, [
       m(CSS.pageTitle, "Home"),
       m(CSS.list, links.map(link => (
-        m(CSS.listItem, m(CSS.link, {
+        m(CSS.listItem, m(m.route.Link, {
+          selector: CSS.link,
           href: link.path,
-          oncreate: m.route.link
         }, link.name))
       )))
     ])
 };
 
-m.route.prefix("#");
+m.route.prefix = "#";
 const mountNode = document.querySelector("#app");
 const routes = {
   "/": Index

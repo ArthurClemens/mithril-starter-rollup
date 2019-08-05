@@ -5,7 +5,7 @@ import umdConfig from "./rollup.umd.js";
 import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
 
-const env = process.env; // eslint-disable-line no-undef
+const env = process.env;
 
 const watchDir = env.WATCH_DIR;
 if (!watchDir) {

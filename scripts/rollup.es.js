@@ -6,7 +6,7 @@ https://github.com/rollup/rollup/wiki/jsnext:main
 import { pkg, createConfig } from "./rollup.base.js";
 
 const includeDepencies = !!parseInt(process.env.DEPS, 10) || false; // Use `false` if you are creating a library, or if you are including external script in html
-const env = process.env; // eslint-disable-line no-undef
+const env = process.env;
 
 const baseConfig = createConfig({ includeDepencies });
 const targetConfig = Object.assign({}, baseConfig, {

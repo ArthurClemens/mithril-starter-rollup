@@ -1,12 +1,10 @@
 # mithril-starter-rollup
 
 Project setup with:
-* [Mithril](http://mithril.js.org)
+* [Mithril 2.x](http://mithril.js.org)
 * [Rollup](http://rollupjs.org) for optimized module bundles
 * [Babel](http://babeljs.io) for transpiling es2015 to es5
 * [LiveReload](https://github.com/livereload/livereload-js) to view code changes directly in the browser
-* [Jest](https://facebook.github.io/jest/) to run BDD tests and create component snapshots
-* [ESLint](http://eslint.org) to find syntax errors and get a standardized coding style
 
 A couple of styles are included using [Tachyon](http://tachyons.io/), but these can simply be replaced with your own CSS solution.
 
@@ -29,21 +27,9 @@ Script commands defined in `package.json`:
 * `serve`: serves the build directory at [localhost:5000](http://localhost:5000/)
 * `dev`: starts a local webserver; creates a bundle in `dist/js/` that is being updated with each code change; calls LiveReload to refresh the browser after code changes are built
 
-Call `npm run dev` and open a web page at [localhost:8080](http://localhost:8080/). The port number is set by environment variable `PORT` in `package.json`.
+Call `npm run dev` and open a web page at [localhost:3000](http://localhost:3000/). The port number is set by environment variable `PORT` in `package.json`.
 
 When making changes, the terminal will show lint errors, if any.
-
-
-
-## Testing
-
-See [mithril-jest](https://github.com/ArthurClemens/mithril-jest) for a short overview of Jest.
-
-* `npm run test`: starts a test run (only useful to know if tests are passing)
-* `npm run test:watch`: starts an interactive session with the option to evaluate and update existing snapshots
-
-To run tests alongside the `watch` command, use a separate terminal window.
-
 
 
 ## Configuration files
@@ -69,9 +55,8 @@ Optional environment variables:
 * `PORT` (Number): sets the http server port when running the `dev` script
 
 
-Other configuration files:
+Other configuration file:
 * `.babelrc`: Babel configuration
-* `.eslintrc`: ESLint configuration
 
 
 ## License

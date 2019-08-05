@@ -5,9 +5,9 @@ const Page = {
   view: ({ attrs }) =>
     m(CSS.page, [
       m(CSS.pageTitle, attrs.title || "Page"),
-      m(CSS.link, {
+      m(m.route.Link, {
         href: "/",
-        oncreate: m.route.link
+        selector: CSS.link,
       }, "Back")
     ])
 };
