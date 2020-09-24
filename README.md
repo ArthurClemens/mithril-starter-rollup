@@ -4,7 +4,6 @@ Project setup with:
 * [Mithril 2.x](http://mithril.js.org)
 * [Rollup](http://rollupjs.org) for optimized module bundles
 * [Babel](http://babeljs.io) for transpiling es2015 to es5
-* [LiveReload](https://github.com/livereload/livereload-js) to view code changes directly in the browser
 
 A couple of styles are included using [Tachyon](http://tachyons.io/), but these can simply be replaced with your own CSS solution.
 
